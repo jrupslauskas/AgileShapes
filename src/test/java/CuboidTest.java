@@ -8,33 +8,33 @@ public class CuboidTest {
 
     // Surface Area Tests
     @org.junit.Test
-    public void surfaceArea1() {
+    public void getSurfaceArea1() {
         assertEquals(6.0f, cube1.surfaceArea(), 0.0);
     }
 
     @org.junit.Test
-    public void surfaceArea2() {
+    public void getSurfaceArea2() {
         assertEquals(24.0f, cube2.surfaceArea(), 0.0);
     }
 
     @org.junit.Test
-    public void surfaceArea3() {
+    public void getSurfaceArea3() {
         assertEquals(54.0f, cube3.surfaceArea(), 0.0);
     }
 
     // Volume Tests
     @org.junit.Test
-    public void volume1() {
+    public void getVolume1() {
         assertEquals(1.0f, cube1.volume(), 0);
     }
 
     @org.junit.Test
-    public void volume2() {
+    public void getVolume2() {
         assertEquals(8.0f, cube2.volume(), 0);
     }
 
     @org.junit.Test
-    public void volume3() {
+    public void getVolume3() {
         assertEquals(27.0f, cube3.volume(), 0);
     }
 

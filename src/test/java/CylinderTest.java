@@ -10,33 +10,33 @@ public class CylinderTest {
 
     // Surface Area Tests
     @Test
-    public void surfaceArea1() {
+    public void getSurfaceArea1() {
         assertEquals(25.13f, cylinder1.surfaceArea(), 0.01);
     }
 
     @Test
-    public void surfaceArea2() {
+    public void getSurfaceArea2() {
         assertEquals(87.96f, cylinder2.surfaceArea(), 0.01);
     }
 
     @Test
-    public void surfaceArea3() {
+    public void getSurfaceArea3() {
         assertEquals(69.11f, cylinder3.surfaceArea(), 0.01);
     }
 
     // Volume Tests
     @Test
-    public void volume1() {
+    public void getVolume1() {
         assertEquals(9.42f, cylinder1.volume(), 0.01);
     }
 
     @Test
-    public void volume2() {
+    public void getVolume2() {
         assertEquals(62.83f, cylinder2.volume(), 0.01);
     }
 
     @Test
-    public void volume3() {
+    public void getVolume3() {
         assertEquals(31.41f, cylinder3.volume(), 0.01);
     }
 
