@@ -1,8 +1,15 @@
-public class Cylinder extends Shape {
+public class Cylinder extends Shape implements Renderer {
 
-    // Fields
+    // Properties
     public float radius;
     public float height;
+
+    // Constructor
+    public Cylinder(Dialog messageBox, float radius, float height) {
+        super(messageBox);
+        this.radius = radius;
+        this.height = height;
+    }
 
     // Public Methods
     @Override
@@ -15,16 +22,7 @@ public class Cylinder extends Shape {
         return (float)Math.PI * (float)Math.pow(this.radius, 2) * this.height;
     }
 
-    @Override
-    public void render() {
-        if (this.radius > 0 && this.height > 0) {
-            System.out.println("Our cylinder has a radius of " + this.radius + " and a height of " + this.height + ". " +
-                    "After calculations, the volume of the cylinder is " + this.volume() + " and the surface area is " +
-                    this.surfaceArea());
-        } else {
-            System.out.println("Invalid info was entered for the cylinder");
-        }
-    }
+//
 
     // Getters and Setters
     public float getRadius() {
@@ -43,10 +41,14 @@ public class Cylinder extends Shape {
         this.height = height;
     }
 
-    // Constructor
-    public Cylinder(float radius, float height) {
-        this.radius = radius;
-        this.height = height;
+
+
+    public void render() {
+
+           messageBox.show("Our cylinder has a radius of " + this.radius + " and a height of " + this.height + ". " +
+                   "After calculations, the volume of the cylinder is " + this.volume() + " and the surface area is " +
+                   this.surfaceArea() + ".", "Cylinder");
+
     }
 
 }

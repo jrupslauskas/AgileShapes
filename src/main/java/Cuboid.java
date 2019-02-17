@@ -1,9 +1,17 @@
-public class Cuboid extends Shape {
+public class Cuboid extends Shape implements Renderer {
 
-    // Fields
+    // Properties
     public float width;
     public float height;
     public float depth;
+
+    // Constructor implementing the message box
+    public Cuboid(Dialog messageBox, float width, float height, float depth) {
+        super(messageBox);
+        this.width = width;
+        this.height = height;
+        this.depth = depth;
+    }
 
     // Public Methods
     @Override
@@ -14,17 +22,6 @@ public class Cuboid extends Shape {
     @Override
     public float volume() {
         return this.depth * this.width * this.height;
-    }
-
-    @Override
-    public void render() {
-        if (this.width > 0 && this.height > 0 && this.depth > 0) {
-            System.out.println("Our cuboid has a height of " + this.height + ", a depth of " + this.depth + ", and a width " +
-                    "of " + this.width + ". After calculations, the volume of the cuboid is " + this.volume() + " " +
-                    "and the surface area is " + this.surfaceArea());
-        } else {
-            System.out.println("Invalid info was entered for the cuboid");
-        }
     }
 
     // Getters and Setters
@@ -52,10 +49,11 @@ public class Cuboid extends Shape {
         this.depth = depth;
     }
 
-    // Constructor
-    public Cuboid(float width, float height, float depth) {
-        this.width = width;
-        this.height = height;
-        this.depth = depth;
+
+
+    public void render() {
+       messageBox.show("Our cuboid has a height of " + this.height + ", a depth of " + this.depth + ", and a width of " + this.width + ". After calculations, the volume of the cuboid is " + this.volume() + " and the surface area is " + this.surfaceArea() + ".", "Cuboid");
     }
+
+
 }

@@ -1,7 +1,13 @@
-public class Sphere extends Shape {
+public class Sphere extends Shape implements Renderer {
 
-    // Fields
+    // Properties
     public float radius;
+
+    // Constructor
+    public Sphere(Dialog messageBox, float radius) {
+        super(messageBox);
+        this.radius = radius;
+    }
 
     // Public Methods
     @Override
@@ -14,15 +20,6 @@ public class Sphere extends Shape {
         return (float)4.0 / (float)3.0 * (float)Math.PI * (float)Math.pow(this.radius, 3);
     }
 
-    @Override
-    public void render() {
-        if (this.radius > 0) {
-            System.out.println("Our sphere has a radius of " + this.radius + ". After calculations, the volume of the " +
-                    "sphere is " + this.volume() + " and the surface area is " + this.surfaceArea());
-        } else {
-            System.out.println("Invalid info was entered for the sphere");
-        }
-    }
 
     // Getters and Setters
     public float getRadius() {
@@ -33,8 +30,10 @@ public class Sphere extends Shape {
         this.radius = radius;
     }
 
-    // Constructor
-    public Sphere(float radius) {
-        this.radius = radius;
+
+    public void render() {
+        messageBox.show("Our sphere has a radius of " + this.radius + ". After calculations, the volume of the " +
+                "sphere is " + this.volume() + " and the surface area is " + this.surfaceArea() + ".", "Sphere");
     }
+
 }

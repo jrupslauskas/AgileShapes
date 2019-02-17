@@ -1,5 +1,5 @@
 public interface Renderer {
 
-    public abstract void render();
+    public void render();
 
 }
