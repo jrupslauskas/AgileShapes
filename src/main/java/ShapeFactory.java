@@ -15,15 +15,15 @@ public class ShapeFactory {
     }
 
     // Build instances of shapes via method of ShapeFactory
-    public Cuboid buildCuboid(float width, float height, float depth) {
+    public Cuboid makeCuboid(float width, float height, float depth) {
         return new Cuboid(getDialog(), width, height, depth);
     }
 
-    public Cylinder buildCylinder(float radius, float height) {
+    public Cylinder makeCylinder(float radius, float height) {
         return new Cylinder(getDialog(), radius, height);
     }
 
-    public Sphere buildSphere(float radius) {
+    public Sphere makeSphere(float radius) {
         return new Sphere(getDialog(), radius);
 
     }
